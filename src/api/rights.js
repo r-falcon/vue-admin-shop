@@ -1,18 +1,18 @@
 import request from "@/utils/request";
 
 // 获取角色列表
-export function roleShow(data) {
+export function roleShow() {
   return request({
     url: "roles",
-    method: "get"
+    method: "get",
   });
 }
 
 // 获取权限列表
-export function rightsData(data) {
+export function rightsData() {
   return request({
     url: "rights/list",
-    method: "get"
+    method: "get",
   });
 }
 
@@ -21,7 +21,7 @@ export function roleAdd(data) {
   return request({
     url: "roles",
     method: "post",
-    data
+    data,
   });
 }
 
@@ -31,7 +31,7 @@ export function roleEdit(data) {
   return request({
     url: `roles/${data.id}`,
     method: "put",
-    data
+    data,
   });
 }
 
@@ -39,7 +39,7 @@ export function roleEdit(data) {
 export function roleDelete(data) {
   return request({
     url: `roles/${data}`,
-    method: "delete"
+    method: "delete",
   });
 }
 
@@ -49,7 +49,7 @@ export function rightsAttr(data) {
   return request({
     url: `roles/${data.roleId}/rights`,
     method: "post",
-    data: { rids: data.rids }
+    data: { rids: data.rids },
   });
 }
 
@@ -58,6 +58,6 @@ export function rightsDelete(data) {
   console.log(data);
   return request({
     url: `roles/${data.role.id}/rights/${data.rightId}`,
-    method: "delete"
+    method: "delete",
   });
 }
